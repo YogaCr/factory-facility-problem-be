@@ -45,11 +45,11 @@ def process_excel(file:UploadFile = File(...), sij:float = Form(...)):
             pf = cost / sumCost
             cumpf = np.cumsum(pf)
             
-            for ip in range(0, pSize, 2):
+            for ip in range(0, pSize-1, 2):
                 if random.random() <= 0.7:
                     child = np.zeros((2, n))
-                    I = random.randint(0, n-3)
-                    J = random.randint(0, n-2)
+                    I = random.randint(0, n-2)
+                    J = random.randint(0, n-1)
                     if I == J:
                         J = I + 1
                     
